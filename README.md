@@ -1,1 +1,1 @@
-# test_book
+This is a minimal example 

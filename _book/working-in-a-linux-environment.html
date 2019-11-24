@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Working in a linux environment | DS book</title>
+  <meta name="description" content="Esstial tools for a data-scientist." />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Working in a linux environment | DS book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Esstial tools for a data-scientist." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Working in a linux environment | DS book" />
+  
+  <meta name="twitter:description" content="Esstial tools for a data-scientist." />
+  
+
+<meta name="author" content="mkls" />
+
+
+<meta name="date" content="2019-11-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Essential tools for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-will-benefit-from-this-book"><i class="fa fa-check"></i>Who will benefit from this book?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-this-book"><i class="fa fa-check"></i>How to read this book?</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-data-science"><i class="fa fa-check"></i><b>1.1</b> What is data science?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#computer-set-up-software"><i class="fa fa-check"></i><b>1.2</b> Computer set-up (software)</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#computer-set-up-hardware"><i class="fa fa-check"></i><b>1.3</b> Computer set-up (hardware)</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html"><i class="fa fa-check"></i><b>2</b> Working in a linux environment</a><ul>
+<li class="chapter" data-level="2.1" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#connecting-to-a-remote-linux-computer"><i class="fa fa-check"></i><b>2.1</b> Connecting to a remote linux computer</a></li>
+<li class="chapter" data-level="2.2" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#basic-terminal-commands"><i class="fa fa-check"></i><b>2.2</b> Basic terminal commands</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#navigating-the-folders"><i class="fa fa-check"></i><b>2.2.1</b> Navigating the folders</a></li>
+<li class="chapter" data-level="2.2.2" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#creating-and-folders-and-files-part-1"><i class="fa fa-check"></i><b>2.2.2</b> Creating and folders and files, part 1</a></li>
+<li class="chapter" data-level="2.2.3" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#viewing-file-contents-part-1"><i class="fa fa-check"></i><b>2.2.3</b> Viewing file contents (part 1)</a></li>
+<li class="chapter" data-level="2.2.4" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#creating-folders-and-files-part-2-vim"><i class="fa fa-check"></i><b>2.2.4</b> Creating folders and files, part 2 (VIM)</a></li>
+<li class="chapter" data-level="2.2.5" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#deleting-files-and-folders"><i class="fa fa-check"></i><b>2.2.5</b> Deleting files and folders</a></li>
+<li class="chapter" data-level="2.2.6" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html#copying-moving-files-and-folder"><i class="fa fa-check"></i><b>2.2.6</b> Copying, moving files and folder</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">DS book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="working-in-a-linux-environment" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Working in a linux environment</h1>
+<div id="connecting-to-a-remote-linux-computer" class="section level2">
+<h2><span class="header-section-number">2.1</span> Connecting to a remote linux computer</h2>
+<p>This section will cover how to connect to a remote linux computer via password or ssh keys.</p>
+<p>To do you actual work you first need to connect on a remote server. If your current computer is running
+Windows thus can be done by using <a href="https://www.putty.org/">PuTTY</a>, however I strongly encourage to
+get <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL</a> This way you can enjoy a
+Ubuntu-like terminal on you Windows machine. This means the following instructions are relevant for both
+Windons on WSL and linux users.</p>
+<p>Things to know when connecting to a server:</p>
+<ol style="list-style-type: decimal">
+<li><p>Getting a linux account. Ask you administrator to create an account with a username of your choosing.
+Keep in mind you will need the username to login and access your files. Keep it short, simple and
+alphanumeric.</p></li>
+<li><p>Method of authentification. There are main two methods: passwords and ssh-keys.</p></li>
+</ol>
+<p>If you are using <em>passwords</em> you will be issued a password by your administrator - change it on your first login by typing in
+`passwd’ and following the prompt.</p>
+<p>If the system uses authentication by <em>ssh keys</em> you should first generate a public private key pair.
+This can be done by typing <code>ssh-keygen -t rsa -C "you@host.com"</code> in you terminal. The <code>"you@host.com</code>
+can be anything - it is used to distinguish keys - you may have multiple of them. You can use your work
+email, full name or other identifiable text.</p>
+<p>Go to your <code>~/.ssh</code> directory. You should see two recently created files: <code>id_rsa</code> and <code>id_rsa.pub</code>.
+These files are you ssh key pair. The <code>id_rsa</code> is the private key - you should never send it to
+anyone - by having this key anyone is able to connect to a computer which has authorisation to connect
+with this key. On the other hand <code>id_rsa.pub</code> should be sent to you administrator who will put it in
+<code>~/.ssh/authorised_keys</code> file on the remote computer this will enable you to connect to the machine.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Connecting. It should be as simple as typing in the command: <code>ssh username@remote_computer_ip</code>.
+If you are using passwords you will be prompted for it. If everything went smooth you will be welcomed
+in the remote server.</p></li>
+<li><p>Ease of use. You might find yourself in a situation where you have multiple keys and/or connecting to
+multiple machines. In this case it is very handy to use a config file in <code>~/.ssh</code> directory. Simply
+create a text file with the following lines:</p></li>
+</ol>
+<pre><code>Host your_alias
+HostName remote_computer_ip
+User your_username
+Port connection_port
+IdentityFile path_to_private_key </code></pre>
+<p>path_to_private_key will be <code>~/.ssh/id_rsa</code> in our case. This file holds all the connection
+information about to the remote computer. You can now use it’s alias to connect to it e.g.
+<code>ssh your_alias</code> Very handy!</p>
+</div>
+<div id="basic-terminal-commands" class="section level2">
+<h2><span class="header-section-number">2.2</span> Basic terminal commands</h2>
+<p>This section will introduce the main commands you will need in your daily routine. I will use some
+Windows analogies to illustrate how they can be used. Note that you should be careful when not only
+deleting files, but also writing because your work can be overwritten.</p>
+<div id="navigating-the-folders" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Navigating the folders</h3>
+<p>After connecting to the remote computer you should land in your home folder. The terminal shows where you
+are currently you shloud see a <code>~$</code> before your blinking cursor. Type <code>pwd</code> for print working directory
+you should see <code>/home/your_username</code> printed after the command is executed. This is your home folder.</p>
+<p>To know what’s in a folder type <code>ls</code> (for list). It might be empty and nothing will get printed. We
+can go <em>up</em> one directory level to <code>/home</code> directory to check it out. Type <code>cd ..</code> in the command
+prompt to do so. It is equivalant to Alt + ↑ or clicking the up arrow in the Windows File
+Explorer navigation bar.</p>
+<p>Type <code>ls</code> once more to see what’s inside this folder. You should see a list of folders with named after
+usernames of this computer’s users. If there are many users the printing might seem cluttered and hard to read.
+Try typing <code>ls -l</code> this outputs a much nicer table like output with folder names in the last column.
+the <code>-l</code> after the <code>ls</code> command is a argument (sometimes also called a flag) it lists out the contents of
+the folder in a Long File Format. Try googling for other arguments of the <code>ls</code> function - you will
+be using it a lot - so it’s good to know what your options are.</p>
+<p>Last thing to note that you navigate to folder by absolute path like <code>cd /home/your_username/</code> and
+by relative path <code>cd your_username</code>.</p>
+</div>
+<div id="creating-and-folders-and-files-part-1" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Creating and folders and files, part 1</h3>
+<p>I’m assuming you returned to your folder <code>/home/your_username/</code> and are ready to make some folder i.e.
+directories. Conveniently this command is named <code>makedir</code>. Let’s type out <code>makedir new_folder</code> to create
+a folder by that name and lets go inside it.</p>
+<p>When creating files you have more options of commands. If you want create a short text file you can use
+<code>&gt;</code> and <code>&gt;&gt;</code> commands. Let’s type <code>echo "This is some text" &gt; new_file.txt</code> and then <code>ls</code> to check
+if our file exists. Ok let’s break down what happens when you type the <code>echo ...</code> command.
+The <code>echo</code> command writes the passed arguments (in out case the string <em>This is some text</em>)
+to standart output (often shortened to <em>stdout</em>). Is one of the three standard streams of I/O the others
+being stardard input (stdin) and standard error (stderr). These streams are plain text that can be
+easily written or displayed. You have already passed command to standard input when typing and
+executing commands in the interactive shell. You have also seen stdout in action when you invoked <code>ls</code>
+commands. However, stdin and stdout shloud not be associated with terminal prompt and output (which
+are inded the default options) they can be any file or even device and the standard streams can be
+redirected as we will se below. Tthis explanation was longwinded but it will come in hand when
+explaining the command.</p>
+<p>The command <code>echo</code> writes the string “This is some text” to standard input. Let’s try the command
+<code>echo "This is some text"</code> you should see your terminal outputting <em>This is some text</em>. This was to
+be expected, right? Now the arrow <code>&gt;</code> is used to redirect the standard output to somewhere else in this
+case it’s the file new_file.txt.</p>
+</div>
+<div id="viewing-file-contents-part-1" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Viewing file contents (part 1)</h3>
+<p>Now to see what’s inside the file you also have several options here:</p>
+<ul>
+<li>cat new_file.txt (cat is used to con<strong>cat</strong>tenate several files and then print to stdout but in
+this case it is very useful to print single files)</li>
+<li>less new_file.txt to read the file page by page</li>
+<li>more new_file.txt to view the entire file’s contents</li>
+</ul>
+</div>
+<div id="creating-folders-and-files-part-2-vim" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Creating folders and files, part 2 (VIM)</h3>
+<p>I mentioned there are several option to create files. I think you can already see the limitations of
+first approach, however let’s explore a few more thing before moving on to text editors.</p>
+<p>It is important to know that <code>&gt;</code> will override any file try it with echo
+<code>echo "This is some completely new text" &gt; new_file.txt</code> further limiting it’s usage. Thankfully, there is
+a similar function <code>&gt;&gt;</code> that will keep adding lines to the end of the file leaving rest of it’s contents
+intact: <code>echo "This is a new line" &gt;&gt; new_file.txt</code>. It comes very handing when collecting outputs from some
+running program.</p>
+<p>If have ever used a text editor like MS Word or LibreOffice Writer you should know powerful and easy
+to use they are. The text editors discussed below are as powerful, however have steeper learning curve.
+The reason you should have at least a basic command of at least one of them is often you will have no
+other options to edit files on remote computers.</p>
+<p>Let’s discuss VIM first. Why VIM? It’s quite popular according to a recent Stack Overflow <a href="https://insights.stackoverflow.com/survey/2019#development-environments-and-tools">survey</a> and
+it might be available in your linux environment.</p>
+<p>To start editing a file young VIM just type <code>vim new_vim_file.txt</code>. If it’s a new file you should see
+<code>"new_vim_file.txt" [New File]</code> in the bottom left. The behavior of VIM can altered by switching it’s
+modes, let’s discuss the main modes briefly:</p>
+<ul>
+<li>Normal mode (also called Command mode) this is mode you can execute commands in VIM. This is the
+default mode when you open a file</li>
+<li>Insert mode used to alter the file’s contents insert/write text</li>
+<li>Visual mode lets you to select text like you would with a mouse</li>
+</ul>
+<p>Let’s go through a simple task in VIM: writing a line of text and saving the document. Assuming you
+kept the file open press <code>a</code> or <code>i</code> key to go to insert mode. It should look something like this:</p>
+<div class="figure">
+<img src="img/insert_mode.png" alt="Insert mode" />
+<p class="caption">Insert mode</p>
+</div>
+<p>You can type as normally now. Write something in like: This is a new line written in VIM. Now ‘save’
+the file. First you need return to to Command mode by hitting <strong>Esc</strong> key
+(you should see the – INSERT – vanish from the bottom left), now press <code>:</code> key and type w.
+The prompt should look like this:</p>
+<div class="figure">
+<img src="img/write_file.png" alt="Write file" />
+<p class="caption">Write file</p>
+</div>
+<p>Now press enter to execute the command. You should get a message <code>"new_vim_file.txt" 1L, 35C written</code>
+mean you have just written 1L containg 35 characters. Now to quit the VIM program press <code>:</code>
+and type q, press enter to execute the command (you could also could have gone with <code>:wq</code> to
+write-and-quit in one go). If for some reason you don’t want to save the changes use <code>:q!</code> to quit
+without saving.</p>
+<p>There’s a pretty high change you’ll be navigating far larger text files that the one we’ve just created.
+The following commands will help you navigating:</p>
+<ul>
+<li>h moves the cursor one character to the left.</li>
+<li>l moves the cursor one character to the right.</li>
+<li>j moves the cursor down one line.</li>
+<li>k moves the cursor up one line.</li>
+<li>0 moves the cursor to the beginning of the line.</li>
+<li>$ moves the cursor to the end of the line.</li>
+<li>w move forward one word.</li>
+<li>b move backward one word.</li>
+<li>G move to the end of the file.</li>
+<li>gg move to the beginning of the file.
+`. move to the last edit.</li>
+</ul>
+<p>A little explantion is needed on the <code>hjkl</code> you have probably already noticed that it’s possible to
+achieve the same navigation with arrow case and as a bonus it also works in insert mode. As with many
+trivialities in Computer Science world there is an ongoing discussion wheter the <code>hjkl</code> or they arrow keys
+should be used. In fact the arrow keys are superior to the <code>hjkl</code> because the can be used in conjunction with
+Ctrl to jump across individual words. You don’t have to use them because someone told you so without
+justifying the motivation.</p>
+<p>VIM has a lot of keyboard-shorcuts and they will dicussed here you can look at or even print out
+<strong>cheatsheets</strong> like <a href="https://vim.rtorr.com/">this</a> to practise using them. I suggest looking at
+<em>Cut and paste</em> and <em>Search and replace</em> sections first. VIM does not have the most intuitive if UIs and
+takes some time to master. Try learning it bit by bit and testing out new things in a toy environment.</p>
+</div>
+<div id="deleting-files-and-folders" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> Deleting files and folders</h3>
+<p>To delete a file simply use the <code>rm</code> command followed with the file name like <code>rm new_vim_file.txt</code>.
+Be careful when deleting files - the action is irreversable. It is smart to select the files first
+before deleting them to make sure you are deleting you want to delete. This is especially important
+when deleting multiple files. First let’s learn how to make multiple files. We will use <code>touch</code> command
+along with the brace expansion <code>touch file{1..10}.txt</code>. <code>touch</code> can create empty files, but it is
+usually used to modify the timestamp of a file. Let’s look at the folder - you should see ten new files
+named <code>file1.txt</code> to <code>file10.txt</code>. Let’s say what we like the file <code>file10.txt</code> but want to delete
+the others. We could do the <code>rm</code> operationh 9 times on each individual file, but it wouldn’t be a
+good use of out time would it? We can optimize the procedure by using wildcards. If you are familiar
+with regex you should know what <code>*</code> and <code>?</code> stand for. If not <code>*</code> - match any simbol(s) i.e. one
+or more and <code>?</code> will match a single any simbol. Let’s try them out by listing our files:
+<code>ls file*.txt</code> should output all the file names we have created, It is very natural because the <code>*</code>
+(we can refer to it as <strong>glob</strong>) matches the first number for the files <code>file1.txt</code> to <code>file9.txt</code>
+and it also matches the 0 for <code>file10.txt</code>. But what if we used the question mark? <code>ls file?.txt</code>
+should show you only files <code>file1.txt</code> to <code>file9.txt</code> because it match a character a single time.
+We know know how deletion will work and we’re not afraid to use it let’s do <code>rm file*.txt</code>. You can see
+the file <code>file10.txt</code> is the only one left. You could point that it was very convient for us to leave
+the double digit file, but there are other matching capabilities, say we needed to delete files
+<code>file6.txt</code> to <code>file10.txt</code> we could have used the same brace expansion: <code>rm file{6..10}.txt</code> to delete them.</p>
+<p>Deleting folder is not that different, just remenber that <strong>all</strong> of their contents will be deleted
+along, we just have to pass along a <code>-r</code> flag to delete them: <code>rm -r my_folder</code>.</p>
+</div>
+<div id="copying-moving-files-and-folder" class="section level3">
+<h3><span class="header-section-number">2.2.6</span> Copying, moving files and folder</h3>
+<p>Copying is achieved with <code>cp</code> command and the following syntax <code>cp my_file_location the_copy_file_location</code>
+You can also copy multiple files just make sure to include the wildcards for both file groups.</p>
+<p>Moving a file can be done with <code>mv</code>: <code>mv file_to_move new_location_of_file</code>. This command is also used for renaming files.</p>
+<p>Copying/moving folders is not different.</p>
+<p>Finally, you will often want to transfer between computers then you should use <code>scp</code>. The following
+will let you copy files from the remote machine to yours while you are on the local machine:
+<code>scp remote_username@remote.ip.adderess:/remote/path/to/file.txt /home/local_username/file.txt</code>
+reverse the two arguments to copy from your local machine to remote. The syntax will work
+if you are on remote computer just be aware what machine you are operating.</p>
+<p>We are done with basic linux commands and will introduce some new ones later. You should have a
+good grasp of creating/deleting/editing/moving/copying files and folders.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["test_book.pdf", "test_book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

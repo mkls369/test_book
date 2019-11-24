@@ -1,0 +1,28 @@
+# Introduction {#intro}
+
+## What is data science?
+
+This will will help you to get started with data science tasks such as to become an (efficient) data scientist:
+
+- navigiating a linux environemnt
+- connnecting to a database
+- automating ETL with shell scripting
+- utilizing remote servers for computing
+- using version control
+
+## Computer set-up (software)
+
+The tasks in this book can be performed under any operating system: Windows, Mac OS, variants of linux.
+However, I strongly encourage Windows users to use variant of linux like Ubuntu. The reason behind it
+is quite simple - a lot of times you will be working on remote computers that do not have any GUI and run under
+linux. So followind along this book will help you to practice skills used in a such environment when only a terminal
+is availale to the user. All the code and examples will be ran on Ubuntu 18.04 so you ahouldn't have trouble 
+following along if you have it installed.
+
+## Computer set-up (hardware)
+
+There are hard no requirements for hardware you use, however a faster machine will let you run the examples faster. 
+However, you will seldom run process large data-sets on your own machine. I suggest using the machine you are currently on
+a two core processor with 8 GB of ram and integrated graphics card is enough. If you more juice you can always rent some time from
+cloud services or upgrade your device as the need arises.
+
