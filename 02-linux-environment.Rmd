@@ -1,5 +1,14 @@
 # Working in a linux environment
 
+When working with on larger projects, bigger datasets you will need to work on a unix like system which 
+usually means a linux distribution or a version MacOS. Cloud computing services like Amazon's EC2, 
+Google's Compute Engine work on linux Virtual Machines so you will have to have some linux knowledge to leverage them.
+Most importantly, when working with a technology you are not familiar with you will likely stumble upon a 
+post, tutorial or a course which will most likely use linux/OSX.
+
+This chapter will get you acquainted with linux environment if ou are on a Mac you should be able to 
+follow along with minimal changes.
+
 ## Connecting to a remote linux computer
 
 This section will cover how to connect to a remote linux computer via password or ssh keys.
@@ -16,13 +25,13 @@ Things to know when connecting to a server:
 Keep in mind you will need the username to login and access your files. Keep it short, simple and
 alphanumeric.
 
-2. Method of authentification. There are main two methods: passwords and ssh-keys. 
+2. Method of authentification. There are main two methods: passwords and ssh keys. 
 
 If you are using *passwords* you will be issued a password by your administrator - change it on your first login by typing in
 `passwd' and following the prompt. 
 
 If the system uses authentication by *ssh keys* you should first generate a public private key pair.
-This can be done by typing `ssh-keygen -t rsa -C "you@host.com"` in you terminal. The `"you@host.com` 
+This can be done by typing `ssh-keygen -t rsa -C "you@host.com"` in you terminal. The `"you@host.com"` 
 can be anything - it is used to distinguish keys - you may have multiple of them. You can use your work 
 email, full name or other identifiable text.
 
@@ -31,6 +40,8 @@ These files are you ssh key pair. The `id_rsa` is the private key - you should n
 anyone - by having this key anyone is able to connect to a computer which has authorization to connect
 with this key. On the other hand `id_rsa.pub` should be sent to you administrator who will put it in 
 `~/.ssh/authorised_keys` file on the remote computer this will enable you to connect to the machine.
+There is an alternative to giving your public key: you can simply issue a command:
+`ssh-copy-id -i id_rsa.pub your_remote_username@host`
 
 3. Connecting. It should be as simple as typing in the command: `ssh username@remote_computer_ip`.
 If you are using passwords you will be prompted for it. If everything went smooth you will be welcomed
@@ -42,10 +53,10 @@ create a text file with the following lines:
 
 ```
 Host your_alias
-HostName remote_computer_ip
-User your_username
-Port connection_port
-IdentityFile path_to_private_key 
+  HostName remote_computer_ip
+  User your_username
+  Port connection_port
+  IdentityFile path_to_private_key 
 ```
 
 path_to_private_key will be `~/.ssh/id_rsa` in our case. This file holds all the connection 
@@ -103,7 +114,7 @@ The command `echo` writes the string "This is some text" to standard input. Let'
 be expected, right? Now the arrow `>` is used to redirect the standard output to somewhere else in this 
 case it's the file new_file.txt.
 
-### Viewing file contents (part 1)
+### Viewing file contents, part 1
 
 Now to see what's inside the file you also have several options here:
 
@@ -210,7 +221,7 @@ the double digit file, but there are other matching capabilities, say we needed 
 Deleting folder is not that different, just remember that **all** of their contents will be deleted 
 along, we just have to pass along a `-r` flag to delete them: `rm -r my_folder`.
 
-### Copying, moving files and folder
+### Copying, moving files and folders
 
 Copying is achieved with `cp` command and the following syntax `cp my_file_location the_copy_file_location`
 You can also copy multiple files just make sure to include the wildcards for both file groups.

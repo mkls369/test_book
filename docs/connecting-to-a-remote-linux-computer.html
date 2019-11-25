@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Introduction | Linux book</title>
+  <title>2.1 Connecting to a remote linux computer | Linux book</title>
   <meta name="description" content="Esstial tools" />
   <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Introduction | Linux book" />
+  <meta property="og:title" content="2.1 Connecting to a remote linux computer | Linux book" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduction | Linux book" />
+  <meta name="twitter:title" content="2.1 Connecting to a remote linux computer | Linux book" />
   
   <meta name="twitter:description" content="Esstial tools" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="what-this-book-is-about.html"/>
-<link rel="next" href="computer-set-up-software.html"/>
+<link rel="prev" href="working-in-a-linux-environment.html"/>
+<link rel="next" href="basic-terminal-commands.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -107,23 +107,58 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<!-- ## What is data science? -->
-<!-- This will will help you to get started with data science tasks such as to become an (efficient) data scientist: -->
-<!-- - navigiating a linux environemnt -->
-<!-- - connnecting to a database -->
-<!-- - automating ETL with shell scripting -->
-<!-- - utilizing remote servers for computing -->
-<!-- - using version control --> 
+<div id="connecting-to-a-remote-linux-computer" class="section level2">
+<h2><span class="header-section-number">2.1</span> Connecting to a remote linux computer</h2>
+<p>This section will cover how to connect to a remote linux computer via password or ssh keys.</p>
+<p>To do you actual work you first need to connect on a remote server. If your current computer is running
+Windows thus can be done by using <a href="https://www.putty.org/">PuTTY</a>, however I strongly encourage to
+get <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL</a> This way you can enjoy a
+Ubuntu-like terminal on you Windows machine. This means the following instructions are relevant for both
+Windons on WSL and linux users.</p>
+<p>Things to know when connecting to a server:</p>
+<ol style="list-style-type: decimal">
+<li><p>Getting a linux account. Ask you administrator to create an account with a username of your choosing.
+Keep in mind you will need the username to login and access your files. Keep it short, simple and
+alphanumeric.</p></li>
+<li><p>Method of authentification. There are main two methods: passwords and ssh keys.</p></li>
+</ol>
+<p>If you are using <em>passwords</em> you will be issued a password by your administrator - change it on your first login by typing in
+`passwd’ and following the prompt.</p>
+<p>If the system uses authentication by <em>ssh keys</em> you should first generate a public private key pair.
+This can be done by typing <code>ssh-keygen -t rsa -C "you@host.com"</code> in you terminal. The <code>"you@host.com"</code>
+can be anything - it is used to distinguish keys - you may have multiple of them. You can use your work
+email, full name or other identifiable text.</p>
+<p>Go to your <code>~/.ssh</code> directory. You should see two recently created files: <code>id_rsa</code> and <code>id_rsa.pub</code>.
+These files are you ssh key pair. The <code>id_rsa</code> is the private key - you should never send it to
+anyone - by having this key anyone is able to connect to a computer which has authorization to connect
+with this key. On the other hand <code>id_rsa.pub</code> should be sent to you administrator who will put it in
+<code>~/.ssh/authorised_keys</code> file on the remote computer this will enable you to connect to the machine.
+There is an alternative to giving your public key: you can simply issue a command:
+<code>ssh-copy-id -i id_rsa.pub your_remote_username@host</code></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Connecting. It should be as simple as typing in the command: <code>ssh username@remote_computer_ip</code>.
+If you are using passwords you will be prompted for it. If everything went smooth you will be welcomed
+in the remote server.</p></li>
+<li><p>Ease of use. You might find yourself in a situation where you have multiple keys and/or connecting to
+multiple machines. In this case it is very handy to use a config file in <code>~/.ssh</code> directory. Simply
+create a text file with the following lines:</p></li>
+</ol>
+<pre><code>Host your_alias
+  HostName remote_computer_ip
+  User your_username
+  Port connection_port
+  IdentityFile path_to_private_key </code></pre>
+<p>path_to_private_key will be <code>~/.ssh/id_rsa</code> in our case. This file holds all the connection
+information about to the remote computer. You can now use it’s alias to connect to it e.g.
+<code>ssh your_alias</code> Very handy!</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="what-this-book-is-about.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="computer-set-up-software.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="working-in-a-linux-environment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-terminal-commands.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,14 +1,14 @@
 # Introduction {#intro}
 
-## What is data science?
+<!-- ## What is data science? -->
 
-This will will help you to get started with data science tasks such as to become an (efficient) data scientist:
+<!-- This will will help you to get started with data science tasks such as to become an (efficient) data scientist: -->
 
-- navigiating a linux environemnt
-- connnecting to a database
-- automating ETL with shell scripting
-- utilizing remote servers for computing
-- using version control
+<!-- - navigiating a linux environemnt -->
+<!-- - connnecting to a database -->
+<!-- - automating ETL with shell scripting -->
+<!-- - utilizing remote servers for computing -->
+<!-- - using version control -->
 
 ## Computer set-up (software)
 

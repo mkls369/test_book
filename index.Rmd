@@ -1,5 +1,5 @@
 --- 
-title: "DS book"
+title: "Linux book"
 subtitle: "TNN"
 author: "mkls"
 date: "`r Sys.Date()`"
@@ -8,15 +8,16 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "Esstial tools for a data-scientist."
+description: "Esstial tools "
 output:
   bookdown::gitbook:
-    split_by: chapter
+    split_by: section
 ---
 
 # Preface {-}
 
-##What this book is about?  {-}
+## What this book is about?  {-}
+
 The book is a collection of tools and how-tos on how to perform tasks that a data scientist may encounter on a daily basis. 
 This book will in part reflect my own experience (I come from economics/statistics background) on 
 acquiring technical skills I will layout things that were not obvious to me, but may come natural for a computer scientist. Furthermore,
@@ -24,16 +25,16 @@ this book will cover a lot of concepts but won't go into great detail discussing
 start doing simple yet very useful and powerful tools introduce concepts that can be then researched by the reader. Finally,
 it will contain links and book recommendations for further reading and learning.
 
-## Who will benefit from this book? {-}
+<!-- ## Who will benefit from this book? {-} -->
 
-Mostly people who are fairly new to data science:
+<!-- Mostly people who are fairly new to data science: -->
 
-- people trying to get into the field/transition from a less data intensive role
-- students who are trying to get exposure on how a real data science work-flow looks like
-- professionals in data intensive role trying to optimize their performance and work-flow
-- anyone who wants practical knowledge on how to utilize tools to work with data more efficiently
+<!-- - people trying to get into the field/transition from a less data intensive role -->
+<!-- - students who are trying to get exposure on how a real data science work-flow looks like -->
+<!-- - professionals in data intensive role trying to optimize their performance and work-flow -->
+<!-- - anyone who wants practical knowledge on how to utilize tools to work with data more efficiently -->
 
-## How to read this book? {-}
+<!-- ## How to read this book? {-} -->
 
-All chapter all self contain so can be read in any order. However, later chapters might leverage some information outlied earlier.
+<!-- All chapter all self contain so can be read in any order. However, later chapters might leverage some information outlied earlier. -->
 
