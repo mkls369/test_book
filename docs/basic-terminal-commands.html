@@ -110,7 +110,7 @@
 <div id="basic-terminal-commands" class="section level2">
 <h2><span class="header-section-number">2.2</span> Basic terminal commands</h2>
 <p>This section will introduce the main commands you will need in your daily routine. I will use some
-Windows analogies to illustrate how they can be used. Note that you should be careful when not only
+analogies to illustrate how they can be used. Note that you should be careful when not only
 deleting files, but also writing because your work can be overwritten.</p>
 <div id="navigating-the-folders" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Navigating the folders</h3>
@@ -119,7 +119,7 @@ are currently you shloud see a <code>~$</code> before your blinking cursor. Type
 you should see <code>/home/your_username</code> printed after the command is executed. This is your home folder.</p>
 <p>To know what’s in a folder type <code>ls</code> (for list). It might be empty and nothing will get printed. We
 can go <em>up</em> one directory level to <code>/home</code> directory to check it out. Type <code>cd ..</code> in the command
-prompt to do so. It is equivalant to Alt + ↑ or clicking the up arrow in the Windows File
+prompt to do so. It is equivalent to Alt + ↑ or clicking the up arrow in the File
 Explorer navigation bar.</p>
 <p>Type <code>ls</code> once more to see what’s inside this folder. You should see a list of folders with named after
 usernames of this computer’s users. If there are many users the printing might seem cluttered and hard to read.
@@ -140,13 +140,13 @@ a folder by that name and lets go inside it.</p>
 if our file exists. Ok let’s break down what happens when you type the <code>echo ...</code> command.
 The <code>echo</code> command writes the passed arguments (in out case the string <em>This is some text</em>)
 to standard output (often shortened to <em>stdout</em>). Is one of the three standard streams of I/O the others
-being stardard input (stdin) and standard error (stderr). These streams are plain text that can be
+being standard input (stdin) and standard error (stderr). These streams are plain text that can be
 easily written or displayed. You have already passed command to standard input when typing and
 executing commands in the interactive shell. You have also seen stdout in action when you invoked <code>ls</code>
 commands. However, stdin and stdout should not be associated with terminal prompt and output (which
-are inded the default options) they can be any file or even device and the standard streams can be
-redirected as we will se below. Tthis explanation was longwinded but it will come in hand when
-explaining the command.</p>
+are indeed the default options) they can be any file or even device and the standard streams can be
+redirected as we will se below. This explanation was long-winded but it will be useful when
+discussing some of the commands.</p>
 <p>The command <code>echo</code> writes the string “This is some text” to standard input. Let’s try the command
 <code>echo "This is some text"</code> you should see your terminal outputting <em>This is some text</em>. This was to
 be expected, right? Now the arrow <code>&gt;</code> is used to redirect the standard output to somewhere else in this

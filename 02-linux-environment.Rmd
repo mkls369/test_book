@@ -14,10 +14,10 @@ follow along with minimal changes.
 This section will cover how to connect to a remote linux computer via password or ssh keys.
 
 To do you actual work you first need to connect on a remote server. If your current computer is running
-Windows thus can be done by using [PuTTY](https://www.putty.org/), however I strongly encourage to 
-get [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) This way you can enjoy a 
-Ubuntu-like terminal on you Windows machine. This means the following instructions are relevant for both
-Windons on WSL and linux users.
+ thus can be done by using [PuTTY](https://www.putty.org/), however I strongly encourage to 
+get [WSL](https://docs.microsoft.com/en-us//wsl/install-win10) This way you can enjoy a 
+Ubuntu-like terminal on you  machine. This means the following instructions are relevant for both
+Windows on WSL and linux users.
 
 Things to know when connecting to a server:
 
@@ -66,7 +66,7 @@ information about to the remote computer. You can now use it's alias to connect 
 ## Basic terminal commands 
 
 This section will introduce the main commands you will need in your daily routine. I will use some 
-Windows analogies to illustrate how they can be used. Note that you should be careful when not only 
+ analogies to illustrate how they can be used. Note that you should be careful when not only 
 deleting files, but also writing because your work can be overwritten.
 
 ### Navigating the folders
@@ -77,7 +77,7 @@ you should see `/home/your_username` printed after the command is executed. This
 
 To know what's in a folder type `ls` (for list). It might be empty and nothing will get printed. We
 can go *up* one directory level to `/home` directory to check it out. Type `cd ..` in the command 
-prompt to do so. It is equivalant to Alt + ↑ or clicking the up arrow in the Windows File 
+prompt to do so. It is equivalent to Alt + ↑ or clicking the up arrow in the  File 
 Explorer navigation bar.
 
 Type `ls` once more to see what's inside this folder. You should see a list of folders with named after
@@ -101,13 +101,13 @@ When creating files you have more options of commands. If you want create a shor
 if our file exists. Ok let's break down what happens when you type the `echo ...` command. 
 The `echo` command writes the passed arguments (in out case the string *This is some text*) 
 to standard output (often shortened to *stdout*). Is one of the three standard streams of I/O the others
-being stardard input (stdin) and standard error (stderr). These streams are plain text that can be
+being standard input (stdin) and standard error (stderr). These streams are plain text that can be
 easily written or displayed. You have already passed command to standard input when typing and 
 executing commands in the interactive shell. You have also seen stdout in action when you invoked `ls` 
 commands. However, stdin and stdout should not be associated with terminal prompt and output (which 
-are inded the default options) they can be any file or even device and the standard streams can be 
-redirected as we will se below. Tthis explanation was longwinded but it will come in hand when 
-explaining the command.
+are indeed the default options) they can be any file or even device and the standard streams can be 
+redirected as we will se below. This explanation was long-winded but it will be useful when 
+discussing some of the commands.
 
 The command `echo` writes the string "This is some text" to standard input. Let's try the command 
 `echo "This is some text"` you should see your terminal outputting *This is some text*. This was to
