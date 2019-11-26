@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.1 Getting acquainted with the command line, part 1 | Linux book</title>
+  <meta name="description" content="Esstial tools" />
+  <meta name="generator" content="bookdown 0.15 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.1 Getting acquainted with the command line, part 1 | Linux book" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Esstial tools" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.1 Getting acquainted with the command line, part 1 | Linux book" />
+  
+  <meta name="twitter:description" content="Esstial tools" />
+  
+
+<meta name="author" content="mkls" />
+
+
+<meta name="date" content="2019-11-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="working-in-a-linux-environment.html"/>
+<link rel="next" href="getting-acquainted-with-the-command-line-part-2.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Essential tools for Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="what-this-book-is-about.html"><a href="what-this-book-is-about.html"><i class="fa fa-check"></i>What this book is about?</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="computer-set-up-software.html"><a href="computer-set-up-software.html"><i class="fa fa-check"></i><b>1.1</b> Computer set-up (software)</a></li>
+<li class="chapter" data-level="1.2" data-path="computer-set-up-hardware.html"><a href="computer-set-up-hardware.html"><i class="fa fa-check"></i><b>1.2</b> Computer set-up (hardware)</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="working-in-a-linux-environment.html"><a href="working-in-a-linux-environment.html"><i class="fa fa-check"></i><b>2</b> Working in a linux environment</a><ul>
+<li class="chapter" data-level="2.1" data-path="getting-acquainted-with-the-command-line-part-1.html"><a href="getting-acquainted-with-the-command-line-part-1.html"><i class="fa fa-check"></i><b>2.1</b> Getting acquainted with the command line, part 1</a></li>
+<li class="chapter" data-level="2.2" data-path="getting-acquainted-with-the-command-line-part-2.html"><a href="getting-acquainted-with-the-command-line-part-2.html"><i class="fa fa-check"></i><b>2.2</b> Getting acquainted with the command line, part 2</a></li>
+<li class="chapter" data-level="2.3" data-path="connecting-to-a-remote-linux-computer.html"><a href="connecting-to-a-remote-linux-computer.html"><i class="fa fa-check"></i><b>2.3</b> Connecting to a remote linux computer</a></li>
+<li class="chapter" data-level="2.4" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html"><i class="fa fa-check"></i><b>2.4</b> Basic terminal commands</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html#navigating-the-folders"><i class="fa fa-check"></i><b>2.4.1</b> Navigating the folders</a></li>
+<li class="chapter" data-level="2.4.2" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html#creating-and-folders-and-files-part-1"><i class="fa fa-check"></i><b>2.4.2</b> Creating and folders and files, part 1</a></li>
+<li class="chapter" data-level="2.4.3" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html#viewing-file-contents-part-1"><i class="fa fa-check"></i><b>2.4.3</b> Viewing file contents, part 1</a></li>
+<li class="chapter" data-level="2.4.4" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html#creating-folders-and-files-part-2-vim"><i class="fa fa-check"></i><b>2.4.4</b> Creating folders and files, part 2 (VIM)</a></li>
+<li class="chapter" data-level="2.4.5" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html#deleting-files-and-folders"><i class="fa fa-check"></i><b>2.4.5</b> Deleting files and folders</a></li>
+<li class="chapter" data-level="2.4.6" data-path="basic-terminal-commands.html"><a href="basic-terminal-commands.html#copying-moving-files-and-folders"><i class="fa fa-check"></i><b>2.4.6</b> Copying, moving files and folders</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Linux book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="getting-acquainted-with-the-command-line-part-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Getting acquainted with the command line, part 1</h2>
+<p>If you are running linux you should be able to search for ‘terminal’ to start a terminal session. If
+you are working on Windows an easy way to emulate an Ubuntu terminal is by installing
+<a href="https://docs.microsoft.com/en-us//wsl/install-win10">Windows Subsystem for Linux</a>.</p>
+<p>First let’s get somw terminology out of the way you will often hear these words when referring to the
+black (or dark colored) screen with a blinking cursor: terminal(emulator), console, command line, shell.
+Below are definitions from <a href="http://www.linfo.org/">The Linux Information Project</a></p>
+<p><em>Terminal</em> - A terminal window, also referred to as a terminal emulator, is a text-only window in a graphical user interface (GUI) that emulates a console.</p>
+<p>The original meaning of <em>console</em> as it related to computers was (1) an instrument panel containing the controls for a computer …
+Another term for console as used in this sense is terminal.</p>
+<p>These two terms have historical origins - you can read about them in their respective
+<a href="http://www.linfo.org/">linfo</a> pages in our case they are often used interchangeably
+to refer to program that <strong>emulates</strong> a machine that is used to input data.</p>
+<p>A <em>command line</em> is the space to the right of the command prompt on an all-text display mode on a computer monitor (usually a CRT or LCD panel) in which a user enters commands and data.</p>
+<p>So the command line is the textual interface - a place for you to input commands for the computer to execute.</p>
+<p>A <strong>shell</strong> is a program that provides the traditional, text-only user interface for Linux and other
+Unix-like operating systems. Its primary function is to read commands … and then execute (i.e., run)
+them.</p>
+<p>Finally shell is the program that allows for easy human-computer communication - it relays commands
+to the deeper layers of the OS. In later Sections we will introduce commands that are executed by the shell.
+One important thing to note is that shells are extremely customizable, we will be using <strong>bash</strong> because of
+its popularity and availability.</p>
+<p>We will be introducing a more terms along this book, it’s a good habit of looking them up to avoid
+confusion.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="working-in-a-linux-environment.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="getting-acquainted-with-the-command-line-part-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["test_book.pdf", "test_book.epub"],
+"toc": {
+"collapse": "subsection"
+},
+"split_by": "sections"
+});
+});
+</script>
+
+</body>
+
+</html>

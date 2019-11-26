@@ -7,72 +7,53 @@ Most importantly, when working with a technology you are not familiar with you w
 post, tutorial or a course which will most likely use linux/OSX.
 
 This chapter will get you acquainted with linux environment if ou are on a Mac you should be able to 
-follow along with minimal changes.
+follow along with minimal changes. 
 
-## Connecting to a remote linux computer
+## The command line. Terminology.
 
-This section will cover how to connect to a remote linux computer via password or ssh keys.
+If you are running linux you should be able to search for 'terminal' to start a terminal session. If
+you are working on Windows an easy way to emulate an Ubuntu terminal is by installing 
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us//wsl/install-win10). 
 
-To do you actual work you first need to connect on a remote server. If your current computer is running
- thus can be done by using [PuTTY](https://www.putty.org/), however I strongly encourage to 
-get [WSL](https://docs.microsoft.com/en-us//wsl/install-win10) This way you can enjoy a 
-Ubuntu-like terminal on you  machine. This means the following instructions are relevant for both
-Windows on WSL and linux users.
+First let's get somw terminology out of the way you will often hear these words when referring to the
+black (or dark colored) screen with a blinking cursor: terminal(emulator), console, command line, shell. 
+Below are definitions from [The Linux Information Project](http://www.linfo.org/) 
 
-Things to know when connecting to a server:
+*Terminal* - A terminal window, also referred to as a terminal emulator, is a text-only window in a graphical user interface (GUI) that emulates a console.
 
-1. Getting a linux account. Ask you administrator to create an account with a username of your choosing. 
-Keep in mind you will need the username to login and access your files. Keep it short, simple and
-alphanumeric.
+The original meaning of *console* as it related to computers was (1) an instrument panel containing the controls for a computer ... 
+Another term for console as used in this sense is terminal.
 
-2. Method of authentification. There are main two methods: passwords and ssh keys. 
+These two terms have historical origins - you can read about them in their respective 
+[linfo](http://www.linfo.org/)  pages in our case they are often used interchangeably 
+to refer to program that **emulates** a machine that is used to input data.
 
-If you are using *passwords* you will be issued a password by your administrator - change it on your first login by typing in
-`passwd' and following the prompt. 
+A *command line* is the space to the right of the command prompt on an all-text display mode on a computer monitor (usually a CRT or LCD panel) in which a user enters commands and data.
 
-If the system uses authentication by *ssh keys* you should first generate a public private key pair.
-This can be done by typing `ssh-keygen -t rsa -C "you@host.com"` in you terminal. The `"you@host.com"` 
-can be anything - it is used to distinguish keys - you may have multiple of them. You can use your work 
-email, full name or other identifiable text.
+So the command line is the textual interface - a place for you to input commands for the computer to execute.
 
-Go to your `~/.ssh` directory. You should see two recently created files: `id_rsa` and `id_rsa.pub`. 
-These files are you ssh key pair. The `id_rsa` is the private key - you should never send it to 
-anyone - by having this key anyone is able to connect to a computer which has authorization to connect
-with this key. On the other hand `id_rsa.pub` should be sent to you administrator who will put it in 
-`~/.ssh/authorised_keys` file on the remote computer this will enable you to connect to the machine.
-There is an alternative to giving your public key: you can simply issue a command:
-`ssh-copy-id -i id_rsa.pub your_remote_username@host`
+A **shell** is a program that provides the traditional, text-only user interface for Linux and other 
+Unix-like operating systems. Its primary function is to read commands ... and then execute (i.e., run) 
+them.
 
-3. Connecting. It should be as simple as typing in the command: `ssh username@remote_computer_ip`.
-If you are using passwords you will be prompted for it. If everything went smooth you will be welcomed
-in the remote server.
+Finally shell is the program that allows for easy human-computer communication - it relays commands 
+to the deeper layers of the OS. In later Sections we will introduce commands that are executed by the shell.
+One important thing to note is that shells are extremely customizable, we will be using **bash** because of
+its popularity and availability.
 
-4. Ease of use. You might find yourself in a situation where you have multiple keys and/or connecting to
-multiple machines. In this case it is very handy to use a config file in `~/.ssh` directory. Simply
-create a text file with the following lines:
+We will be introducing a more terms along this book, it's a good habit of looking them up to avoid 
+confusion.
 
-```
-Host your_alias
-  HostName remote_computer_ip
-  User your_username
-  Port connection_port
-  IdentityFile path_to_private_key 
-```
+## The command line. Basic usage.
 
-path_to_private_key will be `~/.ssh/id_rsa` in our case. This file holds all the connection 
-information about to the remote computer. You can now use it's alias to connect to it e.g.
-`ssh your_alias` Very handy!
+Now that we know that the commands line is we can use our terminal emulator start typing in commands for
+our shell to execute (see it came together!). This section will introduce the main commands you will need in your daily routine. 
+Note that you should be careful when not only deleting files, but also writing because your work can be overwritten.
 
-## Basic terminal commands 
+### Navigating folders
 
-This section will introduce the main commands you will need in your daily routine. I will use some 
- analogies to illustrate how they can be used. Note that you should be careful when not only 
-deleting files, but also writing because your work can be overwritten.
-
-### Navigating the folders
-
-After connecting to the remote computer you should land in your home folder. The terminal shows where you
-are currently you shloud see a `~$` before your blinking cursor. Type `pwd` for print working directory
+I'm assuming you already installed linux or WSL if you are on Windows. The terminal shows where you
+are currently you should see a `~$` before your blinking cursor. Type `pwd` for print working directory
 you should see `/home/your_username` printed after the command is executed. This is your home folder.
 
 To know what's in a folder type `ls` (for list). It might be empty and nothing will get printed. We
@@ -90,7 +71,7 @@ be using it a lot - so it's good to know what your options are.
 Last thing to note that you navigate to folder by absolute path like `cd /home/your_username/` and
 by relative path `cd your_username`.
 
-### Creating and folders and files, part 1
+### Creating folders and files
 
 I'm assuming you returned to your folder `/home/your_username/` and are ready to make some folder i.e.
 directories. Conveniently this command is named `makedir`. Let's type out `makedir new_folder` to create
@@ -114,7 +95,7 @@ The command `echo` writes the string "This is some text" to standard input. Let'
 be expected, right? Now the arrow `>` is used to redirect the standard output to somewhere else in this 
 case it's the file new_file.txt.
 
-### Viewing file contents, part 1
+### Viewing file contents
 
 Now to see what's inside the file you also have several options here:
 
@@ -123,7 +104,7 @@ this case it is very useful to print single files)
 - less new_file.txt to read the file page by page
 - more new_file.txt to view the entire file's contents
 
-### Creating folders and files, part 2 (VIM)
+### Editing files (VIM)
 
 I mentioned there are several option to create files. I think you can already see the limitations of 
 first approach, however let's explore a few more thing before moving on to text editors. 
@@ -196,12 +177,14 @@ VIM has a lot of keyboard-shortcuts and they will discussed here you can look at
 *Cut and paste* and *Search and replace* sections first. VIM does not have the most intuitive if UIs and 
 takes some time to master. Try learning it bit by bit and testing out new things in a toy environment.
 
-### Deleting files and folders
+### Deleting 
 
 To delete a file simply use the `rm` command followed with the file name like `rm new_vim_file.txt`.
 Be careful when deleting files - the action is irreversible It is smart to select the files first 
 before deleting them to make sure you are deleting you want to delete. This is especially important 
-when deleting multiple files. First let's learn how to make multiple files. We will use `touch` command
+when deleting multiple files. 
+
+First let's learn how to make multiple files. We will use `touch` command
 along with the brace expansion `touch file{1..10}.txt`. `touch` can create empty files, but it is
 usually used to modify the timestamp of a file. Let's look at the folder - you should see ten new files
 named `file1.txt` to `file10.txt`. Let's say what we like the file `file10.txt` but want to delete 
@@ -214,21 +197,21 @@ or more and `?` will match a single any symbol. Let's try them out by listing ou
 and it also matches the 0 for `file10.txt`. But what if we used the question mark? `ls file?.txt`
 should show you only files `file1.txt` to `file9.txt` because it match a character a single time.
 We know know how deletion will work and we're not afraid to use it let's do `rm file*.txt`. You can see
-the file `file10.txt` is the only one left. You could point that it was very convinient for us to leave 
+the file `file10.txt` is the only one left. You could point that it was very convenient  for us to leave 
 the double digit file, but there are other matching capabilities, say we needed to delete files 
 `file6.txt` to `file10.txt` we could have used the same brace expansion: `rm file{6..10}.txt` to delete them.
 
 Deleting folder is not that different, just remember that **all** of their contents will be deleted 
 along, we just have to pass along a `-r` flag to delete them: `rm -r my_folder`.
 
-### Copying, moving files and folders
+### Copying and moving 
 
 Copying is achieved with `cp` command and the following syntax `cp my_file_location the_copy_file_location`
 You can also copy multiple files just make sure to include the wildcards for both file groups.
 
 Moving a file can be done with `mv`: `mv file_to_move new_location_of_file`. This command is also used for renaming files.
 
-Copying/moving folders is not different.
+Copying/moving folders is achieved by the same command.
 
 Finally, you will often want to transfer between computers then you should use `scp`. The following 
 will let you copy files from the remote machine to yours while you are on the local machine:
@@ -237,5 +220,60 @@ reverse the two arguments to copy from your local machine to remote. The syntax 
 if you are on remote computer just be aware what machine you are operating.
 
 We are done with basic linux commands and will introduce some new ones later. You should have a 
-good grasp of creating/deleting/editing/moving/copying files and folders.
+good grasp of creating, deleting, editing, moving, copying files and folders.
+
+## Connecting to a remote linux computer
+
+This section will cover how to connect to a remote linux computer via password or ssh keys.
+
+To do you actual work you first need to connect on a remote server. If your current computer is running
+ thus can be done by using [PuTTY](https://www.putty.org/), however I strongly encourage to 
+get [WSL](https://docs.microsoft.com/en-us//wsl/install-win10) This way you can enjoy a 
+Ubuntu-like terminal on you  machine. This means the following instructions are relevant for both
+Windows on WSL and linux users.
+
+Things to know when connecting to a server:
+
+1. Getting a linux account. Ask you administrator to create an account with a username of your choosing. 
+Keep in mind you will need the username to login and access your files. Keep it short, simple and
+alphanumeric.
+
+2. Method of authentification. There are main two methods: passwords and ssh keys. 
+
+2.1. If you are using *passwords* you will be issued a password by your administrator - change it on your first login by typing in
+`passwd` and following the prompt. 
+
+2.2. If the system uses authentication by *ssh keys* you should first generate a public private key pair.
+This can be done by typing `ssh-keygen -t rsa -C "you@host.com"` in you terminal. The `"you@host.com"` 
+can be anything - it is used to distinguish keys - you may have multiple of them. You can use your work 
+email, full name or other identifiable text.
+
+Go to your `~/.ssh` directory. You should see two recently created files: `id_rsa` and `id_rsa.pub`. 
+These files are you ssh key pair. The `id_rsa` is the private key - you should never send it to 
+anyone - by having this key anyone is able to connect to a computer which has authorization to connect
+with this key. On the other hand `id_rsa.pub` should be sent to you administrator who will put it in 
+`~/.ssh/authorised_keys` file on the remote computer this will enable you to connect to the machine.
+There is an alternative to giving your public key: you can simply issue a command:
+`ssh-copy-id -i id_rsa.pub your_remote_username@host`
+
+3. Connecting. It should be as simple as typing in the command: `ssh username@remote_computer_ip`.
+If you are using passwords you will be prompted for it. If everything went smooth you will be welcomed
+in the remote server.
+
+4. Ease of use. You might find yourself in a situation where you have multiple keys and/or connecting to
+multiple machines. In this case it is very handy to use a config file in `~/.ssh` directory. Simply
+create a text file with the following lines:
+
+```
+Host your_alias
+  HostName remote_computer_ip
+  User your_username
+  Port connection_port
+  IdentityFile path_to_private_key 
+```
+
+path_to_private_key will be `~/.ssh/id_rsa` in our case. This file holds all the connection 
+information about to the remote computer. You can now use it's alias to connect to it e.g.
+`ssh your_alias` Very handy!
+
 
