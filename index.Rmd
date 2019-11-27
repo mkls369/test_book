@@ -8,7 +8,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "Esstial tools "
+description: "Linux tools "
 output:
   bookdown::gitbook:
     split_by: section
@@ -22,8 +22,8 @@ The book is a collection of tools and how-tos on how to perform tasks that a dat
 This book will in part reflect my own experience (I come from economics/statistics background) on 
 acquiring technical skills I will layout things that were not obvious to me, but may come natural for a computer scientist. Furthermore,
 this book will cover a lot of concepts but won't go into great detail discussing them - it will teach you enough to
-start doing simple yet very useful and powerful tools introduce concepts that can be then researched by the reader. Finally,
-it will contain links and book recommendations for further reading and learning.
+use simple yet very useful and powerful and tools. To pursue the subejcts introduces here I
+will provide links and book recommendations for further reading.
 
 <!-- ## Who will benefit from this book? {-} -->
 

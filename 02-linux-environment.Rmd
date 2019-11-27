@@ -1,13 +1,21 @@
 # Working in a linux environment
 
-When working with on larger projects, bigger datasets you will need to work on a unix like system which 
-usually means a linux distribution or a version MacOS. Cloud computing services like Amazon's EC2, 
-Google's Compute Engine work on linux Virtual Machines so you will have to have some linux knowledge to leverage them.
+## Why linux?
+
+When working on large projects and big datasets you will likely encounter distrbuted computing 
+running onunix like system which usually means a linux distribution or a version MacOS. 
+Cloud computing services like Amazon's EC2, Google's Compute Engine work on linux Virtual Machines 
+so you will have to have some linux knowledge to leverage them. 
 Most importantly, when working with a technology you are not familiar with you will likely stumble upon a 
-post, tutorial or a course which will most likely use linux/OSX.
+post, tutorial or a course which will most likely use linux/OSX. 
+
+Also it is worth mentioning that most linux distributions(variaties of linux operating system) are
+free to use. On top of the a lot of free, open-source is available to linux users.
+
+Last but not least since linux is open-source it is highly customizable to your needs.
 
 This chapter will get you acquainted with linux environment if ou are on a Mac you should be able to 
-follow along with minimal changes. 
+follow along with minimal code changes. 
 
 ## The command line. Terminology.
 
@@ -15,22 +23,27 @@ If you are running linux you should be able to search for 'terminal' to start a 
 you are working on Windows an easy way to emulate an Ubuntu terminal is by installing 
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us//wsl/install-win10). 
 
-First let's get somw terminology out of the way you will often hear these words when referring to the
-black (or dark colored) screen with a blinking cursor: terminal(emulator), console, command line, shell. 
-Below are definitions from [The Linux Information Project](http://www.linfo.org/) 
+First let's get some terminology out of the way. You will often hear these words when referring to the
+black (or dark colored) screen with a blinking cursor: terminal (emulator), console, command line, shell. 
+Below are definitions from [The Linux Information Project](http://www.linfo.org/) (We will be 
+introducing more terms along this book, it's a good habit of looking them up to avoid 
+confusion)
 
-*Terminal* - A terminal window, also referred to as a terminal emulator, is a text-only window in a graphical user interface (GUI) that emulates a console.
+*Terminal* - A terminal window, also referred to as a terminal emulator, is a text-only window in a 
+graphical user interface (GUI) that emulates a console.
 
-The original meaning of *console* as it related to computers was (1) an instrument panel containing the controls for a computer ... 
-Another term for console as used in this sense is terminal.
+The original meaning of *console* as it related to computers was (1) an instrument panel containing 
+the controls for a computer ... Another term for console as used in this sense is terminal.
 
 These two terms have historical origins - you can read about them in their respective 
-[linfo](http://www.linfo.org/)  pages in our case they are often used interchangeably 
-to refer to program that **emulates** a machine that is used to input data.
+[linfo](http://www.linfo.org/) pages. In our case they are often used interchangeably to refer to
+**program** that **emulates** a machine that is used to input data.
 
-A *command line* is the space to the right of the command prompt on an all-text display mode on a computer monitor (usually a CRT or LCD panel) in which a user enters commands and data.
+A *command line* is the space to the right of the command prompt on an all-text display mode on a 
+computer monitor (usually a CRT or LCD panel) in which a user enters commands and data.
 
-So the command line is the textual interface - a place for you to input commands for the computer to execute.
+So the command line is the textual interface - a place for you to input commands for the computer to
+execute.
 
 A **shell** is a program that provides the traditional, text-only user interface for Linux and other 
 Unix-like operating systems. Its primary function is to read commands ... and then execute (i.e., run) 
@@ -38,28 +51,26 @@ them.
 
 Finally shell is the program that allows for easy human-computer communication - it relays commands 
 to the deeper layers of the OS. In later Sections we will introduce commands that are executed by the shell.
-One important thing to note is that shells are extremely customizable, we will be using **bash** because of
-its popularity and availability.
-
-We will be introducing a more terms along this book, it's a good habit of looking them up to avoid 
-confusion.
+One important thing to note is that shells are extremely customizable and many off-the-shelf varieties exist, 
+we will be using **bash** because of its popularity and availability.
 
 ## The command line. Basic usage.
 
 Now that we know that the commands line is we can use our terminal emulator start typing in commands for
-our shell to execute (see it came together!). This section will introduce the main commands you will need in your daily routine. 
-Note that you should be careful when not only deleting files, but also writing because your work can be overwritten.
+our shell to execute (see it came together!). This section will introduce the main commands you will 
+need in your daily routine. Note that you should be careful when not only deleting files, 
+but also writing because your work will be overwritten.
 
 ### Navigating folders
 
-I'm assuming you already installed linux or WSL if you are on Windows. The terminal shows where you
-are currently you should see a `~$` before your blinking cursor. Type `pwd` for print working directory
-you should see `/home/your_username` printed after the command is executed. This is your home folder.
+I'm assuming you already installed linux or WSL if you are on Windows. The terminal shows the current 
+folder. You should see a `~$` before your blinking cursor. Type `pwd` for print working directory
+you should see `/home/your_username` printed after the command is executed. This is your home folder
+the `~` aka **tilde** is use as a shortcut to your home directory.
 
-To know what's in a folder type `ls` (for list). It might be empty and nothing will get printed. We
-can go *up* one directory level to `/home` directory to check it out. Type `cd ..` in the command 
-prompt to do so. It is equivalent to Alt + ↑ or clicking the up arrow in the  File 
-Explorer navigation bar.
+To know what's in the current folder type `ls` (for list). It might be empty and nothing will get printed. 
+Wecan go *up* one directory level to `/home` directory to check it out. Type `cd ..` in the command 
+prompt to do so. It is equivalent to Alt + ↑ or clicking the up arrow in the File Explorer navigation bar.
 
 Type `ls` once more to see what's inside this folder. You should see a list of folders with named after
 usernames of this computer's users. If there are many users the printing might seem cluttered and hard to read.
@@ -68,18 +79,20 @@ the `-l` after the `ls` command is a argument (sometimes also called a flag) it 
 the folder in a Long File Format. Try googling for other arguments of the `ls` function - you will
 be using it a lot - so it's good to know what your options are.
 
-Last thing to note that you navigate to folder by absolute path like `cd /home/your_username/` and
-by relative path `cd your_username`.
+Last thing to note is that you can navigate to a folder by absolute path like 
+`cd /home/your_username/` and by relative path `cd your_username`.
 
 ### Creating folders and files
 
-I'm assuming you returned to your folder `/home/your_username/` and are ready to make some folder i.e.
+I'm assuming you returned to your folder `/home/your_username/` and are ready to make some folders i.e.
 directories. Conveniently this command is named `makedir`. Let's type out `makedir new_folder` to create
 a folder by that name and lets go inside it. 
 
 When creating files you have more options of commands. If you want create a short text file you can use
 `>` and `>>` commands. Let's type `echo "This is some text" > new_file.txt` and then `ls` to check 
-if our file exists. Ok let's break down what happens when you type the `echo ...` command. 
+if our file has been created successfully. 
+
+Let's break down what happened when you typed the `echo ...` command. 
 The `echo` command writes the passed arguments (in out case the string *This is some text*) 
 to standard output (often shortened to *stdout*). Is one of the three standard streams of I/O the others
 being standard input (stdin) and standard error (stderr). These streams are plain text that can be
@@ -90,10 +103,19 @@ are indeed the default options) they can be any file or even device and the stan
 redirected as we will se below. This explanation was long-winded but it will be useful when 
 discussing some of the commands.
 
-The command `echo` writes the string "This is some text" to standard input. Let's try the command 
+The command `echo` writes the string "This is some text" to standard output. Let's try the command 
 `echo "This is some text"` you should see your terminal outputting *This is some text*. This was to
 be expected, right? Now the arrow `>` is used to redirect the standard output to somewhere else in this 
 case it's the file new_file.txt.
+
+I mentioned there are several options to create files. I think you can already see the limitations of 
+first approach, however let's explore a few more thing before moving on to text editors. 
+
+It is important to know that `>` will override any file try it with echo 
+`echo "This is some completely new text" > new_file.txt` further limiting it's usage. Thankfully, there is 
+a similar function `>>` that will keep adding lines to the end of the file leaving rest of it's contents 
+intact: `echo "This is a new line" >> new_file.txt`. It comes very handing when collecting outputs from some
+running program.
 
 ### Viewing file contents
 
@@ -106,22 +128,14 @@ this case it is very useful to print single files)
 
 ### Editing files (VIM)
 
-I mentioned there are several option to create files. I think you can already see the limitations of 
-first approach, however let's explore a few more thing before moving on to text editors. 
-
-It is important to know that `>` will override any file try it with echo 
-`echo "This is some completely new text" > new_file.txt` further limiting it's usage. Thankfully, there is 
-a similar function `>>` that will keep adding lines to the end of the file leaving rest of it's contents 
-intact: `echo "This is a new line" >> new_file.txt`. It comes very handing when collecting outputs from some
-running program.
-
 If have ever used a text editor like MS Word or LibreOffice Writer you should know powerful and easy
 to use they are. The text editors discussed below are as powerful, however have steeper learning curve.
 The reason you should have at least a basic command of at least one of them is often you will have no 
 other options to edit files on remote computers. 
 
-Let's discuss VIM first. Why VIM? It's quite popular according to a recent Stack Overflow [survey](https://insights.stackoverflow.com/survey/2019#development-environments-and-tools) and
-it might be available in your linux environment.
+Let's discuss VIM first. Why VIM? It's quite popular according to a recent Stack Overflow 
+[survey](https://insights.stackoverflow.com/survey/2019#development-environments-and-tools) and
+it might be already available on your linux environment.
 
 To start editing a file young VIM just type `vim new_vim_file.txt`. If it's a new file you should see
 `"new_vim_file.txt" [New File]` in the bottom left. The behavior of VIM can altered by switching it's
@@ -137,21 +151,21 @@ kept the file open press `a` or `i` key to go to insert mode. It should look som
 
 ![Insert mode](img/insert_mode.png)
 
-You can type as normally now. Write something in like: This is a new line written in VIM. Now 'save' 
-the file. First you need return to to Command mode by hitting **Esc** key 
+You can type in normal manner now. Write something in like: This is a new line written in VIM. 
+Now 'save' the file. First you need return to to Command mode by hitting the **Esc** key 
 (you should see the -- INSERT -- vanish from the bottom left), now press `:` key and type w. 
 The prompt should look like this:
 
 ![Write file](img/write_file.png)
 
-Now press enter to execute the command. You should get a message `"new_vim_file.txt" 1L, 35C written` 
+Now press **Enter** to execute the command. You should get a message `"new_vim_file.txt" 1L, 35C written` 
 mean you have just written 1L containing 35 characters. Now to quit the VIM program press `:` 
 and type q, press enter to execute the command (you could also could have gone with `:wq` to
 write-and-quit in one go). If for some reason you don't want to save the changes use `:q!` to quit 
 without saving.
 
 There's a pretty high change you'll be navigating far larger text files that the one we've just created.
-The following commands will help you navigating:
+The following commands will help you to do that:
 
 - h moves the cursor one character to the left.
 - l moves the cursor one character to the right.
@@ -169,8 +183,8 @@ A little explanation is needed on the `hjkl` you have probably already noticed t
 achieve the same navigation with arrow case and as a bonus it also works in insert mode. As with many
 trivialities in Computer Science world there is an ongoing discussion whether the `hjkl` or they arrow keys 
 should be used. In fact the arrow keys are superior to the `hjkl` because the can be used in conjunction with
-Ctrl to jump across individual words. You don't have to use them because someone told you so without 
-justifying the motivation. 
+**Ctrl** key to jump across individual words. Try various approaches and find the one that is convienient 
+for you - you don't have to use something because someone claimed so without justifying the motivation. 
 
 VIM has a lot of keyboard-shortcuts and they will discussed here you can look at or even print out 
 **cheatsheets** like [this](https://vim.rtorr.com/) to practise using them. I suggest looking at 
@@ -179,10 +193,10 @@ takes some time to master. Try learning it bit by bit and testing out new things
 
 ### Deleting 
 
-To delete a file simply use the `rm` command followed with the file name like `rm new_vim_file.txt`.
-Be careful when deleting files - the action is irreversible It is smart to select the files first 
-before deleting them to make sure you are deleting you want to delete. This is especially important 
-when deleting multiple files. 
+We are balck in the console. To delete a file simply use the `rm` command followed with the file name 
+like `rm new_vim_file.txt`. Be careful when deleting files - the action is irreversible It is smart 
+to select the files first before deleting them to make sure you are deleting you want to delete. 
+This is especially important when deleting multiple files. 
 
 First let's learn how to make multiple files. We will use `touch` command
 along with the brace expansion `touch file{1..10}.txt`. `touch` can create empty files, but it is
@@ -190,14 +204,16 @@ usually used to modify the timestamp of a file. Let's look at the folder - you s
 named `file1.txt` to `file10.txt`. Let's say what we like the file `file10.txt` but want to delete 
 the others. We could do the `rm` operation 9 times on each individual file, but it wouldn't be a 
 good use of out time would it? We can optimize the procedure by using wildcards. If you are familiar 
-with regex you should know what `*` and `?` stand for. If not `*` - match any symbol(s) i.e. one 
-or more and `?` will match a single any symbol. Let's try them out by listing our files: 
-`ls file*.txt` should output all the file names we have created, It is very natural because the `*`
-(we can refer to it as **glob**) matches the first number for the files `file1.txt` to `file9.txt`
-and it also matches the 0 for `file10.txt`. But what if we used the question mark? `ls file?.txt`
-should show you only files `file1.txt` to `file9.txt` because it match a character a single time.
-We know know how deletion will work and we're not afraid to use it let's do `rm file*.txt`. You can see
-the file `file10.txt` is the only one left. You could point that it was very convenient  for us to leave 
+with regex you should know what `*` and `?` stand for. If not `*` will match any symbol(s) i.e. one 
+or more and `?` will match any single symbol (in this case symbols mean any character that is used
+in the name) Let's try them out by listing our files: `ls file*.txt` should output all the file 
+names we have created, It is very natural because the `*` (we can refer to it as **glob**) matches 
+the first number for the files `file1.txt` to `file9.txt` and it also matches the 0 for `file10.txt`. 
+But what if we used the question mark? `ls file?.txt` should show you only files `file1.txt` to 
+`file9.txt` because it match a character a single time.
+
+We know know how deletion will work and we're not afraid to use it. Let's typr `rm file*.txt`. You can see
+the file `file10.txt` is the only one left. You could point that it was very convenient for us to leave 
 the double digit file, but there are other matching capabilities, say we needed to delete files 
 `file6.txt` to `file10.txt` we could have used the same brace expansion: `rm file{6..10}.txt` to delete them.
 
@@ -207,9 +223,10 @@ along, we just have to pass along a `-r` flag to delete them: `rm -r my_folder`.
 ### Copying and moving 
 
 Copying is achieved with `cp` command and the following syntax `cp my_file_location the_copy_file_location`
-You can also copy multiple files just make sure to include the wildcards for both file groups.
+You can also copy multiple files like this: `cp files?.txt another_directory/`.
 
-Moving a file can be done with `mv`: `mv file_to_move new_location_of_file`. This command is also used for renaming files.
+Moving a file can be done with `mv`: `mv file_to_move new_location_of_file`. 
+This command is also used for renaming files.
 
 Copying/moving folders is achieved by the same command.
 
@@ -226,22 +243,22 @@ good grasp of creating, deleting, editing, moving, copying files and folders.
 
 This section will cover how to connect to a remote linux computer via password or ssh keys.
 
-To do you actual work you first need to connect on a remote server. If your current computer is running
- thus can be done by using [PuTTY](https://www.putty.org/), however I strongly encourage to 
-get [WSL](https://docs.microsoft.com/en-us//wsl/install-win10) This way you can enjoy a 
-Ubuntu-like terminal on you  machine. This means the following instructions are relevant for both
-Windows on WSL and linux users.
+If your current computer is running  thus can be done by using [PuTTY](https://www.putty.org/), 
+however I strongly encourage to get [WSL](https://docs.microsoft.com/en-us//wsl/install-win10). 
+This way you can enjoy a Ubuntu-like terminal on you machine. This means the following instructions 
+are relevant for both Windows on WSL and linux users.
 
-Things to know when connecting to a server:
+Things to know when connecting to a remote computer:
 
-1. Getting a linux account. Ask you administrator to create an account with a username of your choosing. 
-Keep in mind you will need the username to login and access your files. Keep it short, simple and
-alphanumeric.
+1. Getting a linux account. Ask you administrator to create an account on the remote computer 
+with a username of your choosing. Keep in mind you will need the username to login and access your 
+files. Keep it short, simple and alphanumeric.
 
 2. Method of authentification. There are main two methods: passwords and ssh keys. 
 
-2.1. If you are using *passwords* you will be issued a password by your administrator - change it on your first login by typing in
-`passwd` and following the prompt. 
+2.1. If you are using *passwords* you will be issued a password by your administrator - 
+change it on your first login by typing in `passwd` and following the prompt. Ask your administrator 
+to reset it if you ever forget it. 
 
 2.2. If the system uses authentication by *ssh keys* you should first generate a public private key pair.
 This can be done by typing `ssh-keygen -t rsa -C "you@host.com"` in you terminal. The `"you@host.com"` 
@@ -249,8 +266,8 @@ can be anything - it is used to distinguish keys - you may have multiple of them
 email, full name or other identifiable text.
 
 Go to your `~/.ssh` directory. You should see two recently created files: `id_rsa` and `id_rsa.pub`. 
-These files are you ssh key pair. The `id_rsa` is the private key - you should never send it to 
-anyone - by having this key anyone is able to connect to a computer which has authorization to connect
+These files are you ssh key pair. The `id_rsa` is the private key - *you should never send it to 
+anyone* - by having this key anyone is able to connect to a computer which has authorization to connect
 with this key. On the other hand `id_rsa.pub` should be sent to you administrator who will put it in 
 `~/.ssh/authorised_keys` file on the remote computer this will enable you to connect to the machine.
 There is an alternative to giving your public key: you can simply issue a command:
@@ -272,7 +289,7 @@ Host your_alias
   IdentityFile path_to_private_key 
 ```
 
-path_to_private_key will be `~/.ssh/id_rsa` in our case. This file holds all the connection 
+`path_to_private_key` will be `~/.ssh/id_rsa` in our case. This file holds all the connection 
 information about to the remote computer. You can now use it's alias to connect to it e.g.
 `ssh your_alias` Very handy!
 
