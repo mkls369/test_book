@@ -191,7 +191,7 @@ VIM has a lot of keyboard-shortcuts and they will discussed here you can look at
 *Cut and paste* and *Search and replace* sections first. VIM does not have the most intuitive if UIs and 
 takes some time to master. Try learning it bit by bit and testing out new things in a toy environment.
 
-### Deleting 
+### Deleting files
 
 We are balck in the console. To delete a file simply use the `rm` command followed with the file name 
 like `rm new_vim_file.txt`. Be careful when deleting files - the action is irreversible It is smart 
@@ -270,6 +270,7 @@ These files are you ssh key pair. The `id_rsa` is the private key - *you should 
 anyone* - by having this key anyone is able to connect to a computer which has authorization to connect
 with this key. On the other hand `id_rsa.pub` should be sent to you administrator who will put it in 
 `~/.ssh/authorised_keys` file on the remote computer this will enable you to connect to the machine.
+
 There is an alternative to giving your public key: you can simply issue a command:
 `ssh-copy-id -i id_rsa.pub your_remote_username@host`
 
@@ -278,7 +279,7 @@ If you are using passwords you will be prompted for it. If everything went smoot
 in the remote server.
 
 4. Ease of use. You might find yourself in a situation where you have multiple keys and/or connecting to
-multiple machines. In this case it is very handy to use a config file in `~/.ssh` directory. Simply
+multiple machines. In this case it is very handy to use a `config` file in `~/.ssh` directory. Simply
 create a text file with the following lines:
 
 ```
@@ -292,5 +293,7 @@ Host your_alias
 `path_to_private_key` will be `~/.ssh/id_rsa` in our case. This file holds all the connection 
 information about to the remote computer. You can now use it's alias to connect to it e.g.
 `ssh your_alias` Very handy!
+
+### Getting help
 
 

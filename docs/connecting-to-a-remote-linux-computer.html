@@ -24,7 +24,7 @@
 <meta name="author" content="mkls" />
 
 
-<meta name="date" content="2019-11-27" />
+<meta name="date" content="2020-01-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -84,10 +84,12 @@
 <li class="chapter" data-level="2.3.2" data-path="the-command-line-basic-usage-.html"><a href="the-command-line-basic-usage-.html#creating-folders-and-files"><i class="fa fa-check"></i><b>2.3.2</b> Creating folders and files</a></li>
 <li class="chapter" data-level="2.3.3" data-path="the-command-line-basic-usage-.html"><a href="the-command-line-basic-usage-.html#viewing-file-contents"><i class="fa fa-check"></i><b>2.3.3</b> Viewing file contents</a></li>
 <li class="chapter" data-level="2.3.4" data-path="the-command-line-basic-usage-.html"><a href="the-command-line-basic-usage-.html#editing-files-vim"><i class="fa fa-check"></i><b>2.3.4</b> Editing files (VIM)</a></li>
-<li class="chapter" data-level="2.3.5" data-path="the-command-line-basic-usage-.html"><a href="the-command-line-basic-usage-.html#deleting"><i class="fa fa-check"></i><b>2.3.5</b> Deleting</a></li>
+<li class="chapter" data-level="2.3.5" data-path="the-command-line-basic-usage-.html"><a href="the-command-line-basic-usage-.html#deleting-files"><i class="fa fa-check"></i><b>2.3.5</b> Deleting files</a></li>
 <li class="chapter" data-level="2.3.6" data-path="the-command-line-basic-usage-.html"><a href="the-command-line-basic-usage-.html#copying-and-moving"><i class="fa fa-check"></i><b>2.3.6</b> Copying and moving</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="connecting-to-a-remote-linux-computer.html"><a href="connecting-to-a-remote-linux-computer.html"><i class="fa fa-check"></i><b>2.4</b> Connecting to a remote linux computer</a></li>
+<li class="chapter" data-level="2.4" data-path="connecting-to-a-remote-linux-computer.html"><a href="connecting-to-a-remote-linux-computer.html"><i class="fa fa-check"></i><b>2.4</b> Connecting to a remote linux computer</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="connecting-to-a-remote-linux-computer.html"><a href="connecting-to-a-remote-linux-computer.html#getting-help"><i class="fa fa-check"></i><b>2.4.1</b> Getting help</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -134,15 +136,15 @@ email, full name or other identifiable text.</p>
 These files are you ssh key pair. The <code>id_rsa</code> is the private key - <em>you should never send it to
 anyone</em> - by having this key anyone is able to connect to a computer which has authorization to connect
 with this key. On the other hand <code>id_rsa.pub</code> should be sent to you administrator who will put it in
-<code>~/.ssh/authorised_keys</code> file on the remote computer this will enable you to connect to the machine.
-There is an alternative to giving your public key: you can simply issue a command:
+<code>~/.ssh/authorised_keys</code> file on the remote computer this will enable you to connect to the machine.</p>
+<p>There is an alternative to giving your public key: you can simply issue a command:
 <code>ssh-copy-id -i id_rsa.pub your_remote_username@host</code></p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Connecting. It should be as simple as typing in the command: <code>ssh username@remote_computer_ip</code>.
 If you are using passwords you will be prompted for it. If everything went smooth you will be welcomed
 in the remote server.</p></li>
 <li><p>Ease of use. You might find yourself in a situation where you have multiple keys and/or connecting to
-multiple machines. In this case it is very handy to use a config file in <code>~/.ssh</code> directory. Simply
+multiple machines. In this case it is very handy to use a <code>config</code> file in <code>~/.ssh</code> directory. Simply
 create a text file with the following lines:</p></li>
 </ol>
 <pre><code>Host your_alias
@@ -153,7 +155,12 @@ create a text file with the following lines:</p></li>
 <p><code>path_to_private_key</code> will be <code>~/.ssh/id_rsa</code> in our case. This file holds all the connection
 information about to the remote computer. You can now use it’s alias to connect to it e.g.
 <code>ssh your_alias</code> Very handy!</p>
+<div id="getting-help" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Getting help</h3>
 
+<p>#R Markdown</p>
+
+</div>
 </div>
 <!-- </div> -->
             </section>
